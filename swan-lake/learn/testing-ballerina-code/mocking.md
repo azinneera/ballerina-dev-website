@@ -304,64 +304,20 @@ function testSendNotification() {
 
 ## Mocking Functions
 
-The Ballerina test framework provides the capability to mock a function. Using the mocking feature, you can easily mock a function in a module that you are testing or a function of an imported module. This feature will help you to test your Ballerina code independently from other modules and functions.
+The Ballerina test framework provides the capability to mock a function. Using the mocking feature, you can easily mock a 
+function in a module that you are testing or a function of an imported module. This feature will help you to test your 
+Ballerina code independently from other modules and functions.
 
-### Mocking an imported function
+The annotation `@test:Mock {}` is used to declare a `MockFunction` object, with details of the name of the function to 
+be mocked, as well as the module name if an import function is being mocked. The module name value of the annotation is 
+optional if the function being mocked is not an import function. 
 
-The function specified with the `@test:Mock {}` annotation will be considered as a mock function that gets triggered every time the original function is called. The original function that will be mocked should be defined using the following annotation value fields.
+Subsequent to the declaration, the function call should be stubbed using the available function mocking features. Different behaviors can be defined for different test cases if required.
 
-*   ***moduleName : "&lt;moduleName&gt;"*** - Name of the module in which the function to be mocked resides in. If the
+*   ***moduleName : "&lt;moduleName&gt;"*** - (optional) Name of the module in which the function to be mocked
+ resides in. If the
  function is within the same module, this can be left blank or “.” (no module) can be passed. If the function is in a different module but within the same project, just passing the module name will suffice. For functions in completely separate modules, the fully-qualified module name must be passed, which includes the `orgName` and the `version` (i.e., `orgName/module:version`). For native functions, the Ballerina module needs to be specified.
 *   ***functionName : "&lt;functionName&gt;"*** - Name of the function to be mocked.
-
-Mocking an imported function will apply the mocked function to every instance of the original function call. It is not limited to the test the file, which is being mocked. 
-
-***Example:***
-
-***main.bal***
-
-```ballerina
-import ballerina/io;
-import ballerina/math;
-
-// The function prints the value of PI using the `io:println` function
-public function printMathConsts() {
-   io:println("Value of PI : ", math:PI);
-}
-```
-
-***main_test.bal***
-
-```ballerina
-import ballerina/test;
-
-(any|error)[] outputs = [];
-
-// This is the mock function, which replaces the `io:println` function
-@test:Mock {
-    moduleName: "ballerina/io",
-    functionName: "println"
-}
-function mockIoPrintLn((any|error)... text) {
-    // Append the print statement to a global array
-    outputs.push(text);
-}
-
-// This function tests the PI constant value provided by the `ballerina/math` module
-@test:Config {}
-function testMathConsts() {
-    // Invoke the function to test
-    printMathConsts();
-
-    // Verify the value provided by the math module against the expected value
-    test:assertEquals(outputs[0].toString(), "Value of PI :  3.141592653589793");
-}
-```
-
-#### Mocking a function in the same module
-
-The object specified with the `@test:MockFn {}` annotation will be considered as a mock function that gets triggered
- every time the original function is called. Subsequent to the declaration, the function call should be stubbed using the available function mocking features. Different behaviors can be defined for different test cases if required.
 
 ***Example:***
 
@@ -393,7 +349,7 @@ test:MockFunction intAddMockFn = new();
 After the initialization, the following options can be used to stub the behaviour of a function written in the
  module being tested.
  
- #### Stubbing to return a specific value
+#### Stubbing to return a specific value
   
  This test stubs the behavior of the `get` function to return a specific value in 2 ways:
      
@@ -422,6 +378,26 @@ This test stubs the behavior of the `intAdd` function to substitute it with a us
 
 ```ballerina
 import ballerina/test;
+The following example shows how to mock an imported function.
+
+***main_test.bal***
+
+```ballerina
+import ballerina/math;
+import ballerina/test;
+
+@test:Mock {
+    moduleName : "ballerina/math",
+    functionName : "absInt"
+}
+test:MockFunction mock_absInt = new();
+
+@test:Config {}
+public function testFunction() {
+    test:when(mock_absInt).call(100);
+    test:assertEquals(math:absInt(-5), 100);
+}
+```
        
 @test:Config {}
 function testCall() {
