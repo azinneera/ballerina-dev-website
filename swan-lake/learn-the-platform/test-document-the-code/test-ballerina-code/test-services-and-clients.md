@@ -110,6 +110,33 @@ function getMockResponse() returns http:Response {
 }
 ```
 
+### Mock `final` clients
+
+Mocking of clients that are declared `final` cannot be mocked using object mocking as the `final` keyword does not allow modification. 
+Therefore, if you are writing a final client, the recommended way is to write the client initialization logic in a separate function 
+and assign the return value to the client. The function that handles the client initialization can then be mocked 
+with the `legacy function mocking` feature for testing.
+
+***Example:***
+The following is a simple example on how legacy function mocking can be used to mock a `final` client.
+
+Initialize the client:
+```bal
+final http:Client clientEndpoint = check intializeClient();
+
+function intializeClient() returns http:Client|error {
+   return new ("https://api.chucknorris.io/jokes/");
+}
+
+```
+
+Mock the client for testing
+```bal
+@test:Mock { functionName: "intializeClient" }
+function getMockClient() returns http:Client|error {
+    return test:mock(http:Client);
+}
+```
 To lean more about how to use mocking to test services, see [Mocking](/learn/test-ballerina-code/mocking).
 
 ## Configure services and clients
