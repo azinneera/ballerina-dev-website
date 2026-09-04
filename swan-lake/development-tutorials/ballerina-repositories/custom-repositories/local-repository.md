@@ -3,7 +3,7 @@ layout: ballerina-local-repository-left-nav-pages-swanlake
 title: Local repository
 description: Use the local repository to temporarily override package dependencies during package development and bug-fixing.
 keywords: ballerina, programming language, ballerina packages, local repository, dependencies
-permalink: /learn/local-repository/
+permalink: /learn/custom-repositories/local-repository/
 active: local-repository
 intro: Use the local repository to temporarily override package dependencies during package development and bug-fixing.
 ---

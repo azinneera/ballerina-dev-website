@@ -813,7 +813,7 @@ export default function Boxes(props) {
                       </div>
                       <div className={styles.content}>
                         <p className={styles.title}>
-                          <a href={`${prefix}/learn/local-repository`} className={styles.titleLink}>
+                          <a href={`${prefix}/learn/custom-repositories/local-repository`} className={styles.titleLink}>
                             Local repository
                           </a>
                         </p>
@@ -821,7 +821,7 @@ export default function Boxes(props) {
                       </div>
                       <div className={styles.content}>
                         <p className={styles.title}>
-                          <a href={`${prefix}/learn/set-up-artifactory`} className={styles.titleLink}>
+                          <a href={`${prefix}/learn/custom-repositories/set-up-artifactory`} className={styles.titleLink}>
                             JFrog Artifactory
                           </a>
                         </p>
@@ -829,7 +829,7 @@ export default function Boxes(props) {
                       </div>
                       <div className={styles.content}>
                         <p className={styles.title}>
-                          <a href={`${prefix}/learn/set-up-nexus`} className={styles.titleLink}>
+                          <a href={`${prefix}/learn/custom-repositories/set-up-nexus`} className={styles.titleLink}>
                             Sonatype Nexus
                           </a>
                         </p>

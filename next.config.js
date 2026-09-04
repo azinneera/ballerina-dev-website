@@ -290,11 +290,11 @@ const nextConfig = {
       },
       {
         source: `/${redirectBase}learn/publish-packages-to-ballerina-central`,
-        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/publish-packages-to-ballerina-central`,
+        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/ballerina-central`,
       },
       {
         source: `/${redirectBase}learn/ballerina-central`,
-        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/publish-packages-to-ballerina-central`,
+        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/ballerina-central`,
       },
       {
         source: `/${redirectBase}learn/configure-a-network-proxy`,
@@ -305,16 +305,8 @@ const nextConfig = {
         destination: `/${redirectBase}learn/development-tutorials/source-code-dependencies/manage-dependencies`,
       },
       {
-        source: `/${redirectBase}learn/local-repository`,
-        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/custom-repositories/local-repository`,
-      },
-      {
-        source: `/${redirectBase}learn/set-up-artifactory`,
-        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/custom-repositories/set-up-artifactory`,
-      },
-      {
-        source: `/${redirectBase}learn/set-up-nexus`,
-        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/custom-repositories/set-up-nexus`,
+        source: `/${redirectBase}learn/custom-repositories/:slug`,
+        destination: `/${redirectBase}learn/development-tutorials/ballerina-repositories/custom-repositories/:slug`,
       },
       {
         source: `/${redirectBase}learn/code-to-cloud-deployment`,

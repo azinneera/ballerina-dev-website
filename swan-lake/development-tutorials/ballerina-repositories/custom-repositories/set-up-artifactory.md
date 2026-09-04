@@ -3,7 +3,7 @@ layout: ballerina-set-up-artifactory-left-nav-pages-swanlake
 title: JFrog Artifactory
 description: Set up JFrog Artifactory as a private repository to host your own Ballerina packages, or as a caching proxy for Ballerina Central.
 keywords: ballerina, programming language, ballerina packages, custom repository, maven repository, private packages, proxy alternative, caching proxy, ballerina central proxy, sbom, vulnerability scanning, jfrog artifactory, jfrog xray, sca
-permalink: /learn/set-up-artifactory/
+permalink: /learn/custom-repositories/set-up-artifactory/
 active: set-up-artifactory
 intro: Set up [JFrog Artifactory](https://jfrog.com/artifactory/) as a private repository to host your own Ballerina packages, or as a caching proxy for Ballerina Central.
 ---

@@ -29,7 +29,7 @@ The Ballerina Central is a remote repository and creates a local file system cac
 **Local repository**
 
 The local repository is also a file system repository, which will be created in the `<USER_HOME>` location. The repository location is `<USER_HOME>/.ballerina/repositories/local/bala`. 
-For more information, see [Local repository](/learn/local-repository/).
+For more information, see [Local repository](/learn/custom-repositories/local-repository/).
 
 **Custom repositories**
 
@@ -121,19 +121,19 @@ When a new Swan Lake update distribution is released, it may include incompatibl
 
 ## Use dependencies from the local repository
 
-The local repository is useful to test a package in the development phase or to fix bugs. To use a dependency from the local repository, publish it there with `bal push --repository local`, then reference it in the `Ballerina.toml` file with `repository = "local"`. For more information on this, see [Local repository](/learn/local-repository/).
+The local repository is useful to test a package in the development phase or to fix bugs. To use a dependency from the local repository, publish it there with `bal push --repository local`, then reference it in the `Ballerina.toml` file with `repository = "local"`. For more information on this, see [Local repository](/learn/custom-repositories/local-repository/).
 
 ## Use custom repositories for package management
 
-Ballerina supports Maven repositories such as [Nexus](https://www.sonatype.com/products/sonatype-nexus-repository), [Artifactory](https://jfrog.com/artifactory/), [GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-maven-registry), and [GitLab packages](https://docs.gitlab.com/user/packages/package_registry/) to be set up as custom repositories — either to host your organization's own private Ballerina packages, or as a caching proxy for Ballerina Central.
+Ballerina supports Maven repositories such as [Nexus](https://www.sonatype.com/products/sonatype-nexus-repository), [Artifactory](https://jfrog.com/artifactory/), [GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-maven-registry), and [GitLab packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/) to be set up as custom repositories — either to host your organization's own private Ballerina packages, or as a caching proxy for Ballerina Central.
 
 ### Create the repository
 
 Before configuring Ballerina, create the repository in your chosen repository manager.
 
-* For **Artifactory**, see [JFrog Artifactory](/learn/set-up-artifactory).
-* For **Nexus**, see [Sonatype Nexus](/learn/set-up-nexus).
-* In **GitLab packages** and **GitHub Packages**, each publishes to an existing project or repository. See the official [GitLab's documentation](https://docs.gitlab.com/user/packages/package_registry/) or [GitHub's documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-maven-registry) to find the Maven registry endpoint for your project or repository.
+* For **Artifactory**, see [JFrog Artifactory](/learn/custom-repositories/set-up-artifactory).
+* For **Nexus**, see [Sonatype Nexus](/learn/custom-repositories/set-up-nexus).
+* In **GitLab packages** and **GitHub Packages**, each publishes to an existing project or repository. See the official [GitLab](https://docs.gitlab.com/user/packages/package_registry/) or [GitHub](https://docs.github.com/en/packages/working-with-a-github-packages-registry) documentation to find the Maven registry endpoint for your project or repository.
 
 ### Define the custom repository
 
@@ -197,8 +197,8 @@ The organization should have a repository manager hosted on-premises or in the c
 
 Both [JFrog Artifactory](https://jfrog.com/artifactory/) and [Sonatype Nexus](https://www.sonatype.com/products/sonatype-nexus-repository) have been tested and verified against the above requirements.
 
-* For **Artifactory**, see [JFrog Artifactory](/learn/set-up-artifactory/#configure-a-proxy-repository).
-* For **Nexus**, see [Sonatype Nexus](/learn/set-up-nexus/#configure-a-proxy-repository).
+* For **Artifactory**, see [JFrog Artifactory](/learn/custom-repositories/set-up-artifactory/#configure-a-proxy-repository).
+* For **Nexus**, see [Sonatype Nexus](/learn/custom-repositories/set-up-nexus/#configure-a-proxy-repository).
 
 ### Configure the Ballerina client to proxy Ballerina Central
 

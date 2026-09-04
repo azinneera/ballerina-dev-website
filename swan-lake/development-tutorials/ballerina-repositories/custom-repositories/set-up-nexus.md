@@ -3,7 +3,7 @@ layout: ballerina-set-up-nexus-left-nav-pages-swanlake
 title: Sonatype Nexus
 description: Set up Sonatype Nexus as a private repository to host your own Ballerina packages, or as a caching proxy for Ballerina Central.
 keywords: ballerina, programming language, ballerina packages, custom repository, maven repository, private packages, proxy alternative, caching proxy, ballerina central proxy, sonatype nexus
-permalink: /learn/set-up-nexus/
+permalink: /learn/custom-repositories/set-up-nexus/
 active: set-up-nexus
 intro: Set up [Sonatype Nexus](https://www.sonatype.com/products/sonatype-nexus-repository) as a private repository to host your own Ballerina packages, or as a caching proxy for Ballerina Central.
 ---

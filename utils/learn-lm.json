@@ -836,7 +836,7 @@
                             "position": 1,
                             "isDir": false,
                             "url": "/learn/ballerina-central",
-                            "id": "publish-packages-to-ballerina-central"
+                            "id": "ballerina-central"
                         },
                         {
                             "dirName": "Custom Repositories",
@@ -851,7 +851,7 @@
                                     "level": 4,
                                     "position": 1,
                                     "isDir": false,
-                                    "url": "/learn/local-repository",
+                                    "url": "/learn/custom-repositories/local-repository",
                                     "id": "local-repository"
                                 },
                                 {
@@ -859,7 +859,7 @@
                                     "level": 4,
                                     "position": 2,
                                     "isDir": false,
-                                    "url": "/learn/set-up-artifactory",
+                                    "url": "/learn/custom-repositories/set-up-artifactory",
                                     "id": "set-up-artifactory"
                                 },
                                 {
@@ -867,7 +867,7 @@
                                     "level": 4,
                                     "position": 3,
                                     "isDir": false,
-                                    "url": "/learn/set-up-nexus",
+                                    "url": "/learn/custom-repositories/set-up-nexus",
                                     "id": "set-up-nexus"
                                 }
                             ]
